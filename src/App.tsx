@@ -4,8 +4,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Slider from "react-slick";
 
-
-
 import { NavbarComponent } from './components/navbar/NavBarComponent';
 // Images
 import topCreatureImage from './assets/images/creatures/Back_Cover_Seredene_Illustration.png'
@@ -196,6 +194,7 @@ function App() {
 			ease: "none",
 		});
 	}
+
 	const endCreatureAnimate: any = () => {
 		gsap.fromTo("#section_four .creature-image", {
 			xPercent: 0,
