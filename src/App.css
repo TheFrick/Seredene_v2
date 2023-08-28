@@ -1,0 +1,151 @@
+h1 {
+	transition: all 0.2s;
+}
+
+#section_one,
+.first-parallax {
+	background: url('../src/assets/images/background/welcome_to_seredene_bg.jpg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+#section_two,
+.first-parallax {
+	background: url('../src/assets/images/background/body_bg.svg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+#section_three,
+.second-parallax {
+	background: url('../src/assets/images/background/body_bg.svg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+#section_five,
+.first-parallax {
+	background: url('../src/assets/images/background/bring_your_imagination_bg.jpg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+#section_six {
+	background: url('../src/assets/images/background/authior_message_bg.jpg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+#section_seven,
+.first-parallax {
+	background: url('../src/assets/images/background/body_bg.svg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+.creature-one-bg {
+	background: url('../src/assets/images/background/twinx_bg.jpg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+.creature-two-bg {
+	background: url('../src/assets/images/background/gemsty_bg.jpg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+.creature-three-bg {
+	background: url('../src/assets/images/background/bugsty_bg.jpg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+.creature-four-bg {
+	background: url('../src/assets/images/background/tobo_bg.jpg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+.creature-five-bg {
+	background: url('../src/assets/images/background/hoggit_bg.jpg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+.creature-six-bg {
+	background: url('../src/assets/images/background/blinga_bg.jpg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+.creature-seven-bg {
+	background: url('../src/assets/images/background/huztoc_bg.jpg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+.creature-eight-bg {
+	background: url('../src/assets/images/background/fairylex_bg.jpg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+.creature-nine-bg {
+	background: url('../src/assets/images/background/spirwindy_bg.jpg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+.creature-ten-bg {
+	background: url('../src/assets/images/background/grazil_bg.jpg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+.creature-eleven-bg {
+	background: url('../src/assets/images/background/grovo_bg.jpg') no-repeat 50% 50%;
+	background-size: cover;
+}
+
+
+@media screen and (max-width: 767px) {
+	.creature-one-bg {
+		background: url('../src/assets/images/star_creature_phone_bg/twinx.jpg') no-repeat 50% 50%;
+		background-size: cover;
+	}
+
+	.creature-two-bg {
+		background: url('../src/assets/images/star_creature_phone_bg/gemsty.jpg') no-repeat 50% 50%;
+		background-size: cover;
+	}
+
+	.creature-three-bg {
+		background: url('../src/assets/images/star_creature_phone_bg/bugsty.jpg') no-repeat 50% 50%;
+		background-size: cover;
+	}
+
+	.creature-four-bg {
+		background: url('../src/assets/images/star_creature_phone_bg/todo.jpg') no-repeat 50% 50%;
+		background-size: cover;
+	}
+
+	.creature-five-bg {
+		background: url('../src/assets/images/star_creature_phone_bg/hoggit.jpg') no-repeat 50% 50%;
+		background-size: cover;
+	}
+
+	.creature-six-bg {
+		background: url('../src/assets/images/star_creature_phone_bg/blinga.jpg') no-repeat 50% 50%;
+		background-size: cover;
+	}
+
+	.creature-seven-bg {
+		background: url('../src/assets/images/star_creature_phone_bg/huztoc.jpg') no-repeat 50% 50%;
+		background-size: cover;
+	}
+
+	.creature-eight-bg {
+		background: url('../src/assets/images/star_creature_phone_bg/fairylex.jpg') no-repeat 50% 50%;
+		background-size: cover;
+	}
+
+	.creature-nine-bg {
+		background: url('../src/assets/images/star_creature_phone_bg/spirwindy.jpg') no-repeat 50% 50%;
+		background-size: cover;
+	}
+
+	.creature-ten-bg {
+		background: url('../src/assets/images/star_creature_phone_bg/grazil.jpg') no-repeat 50% 50%;
+		background-size: cover;
+	}
+
+	.creature-eleven-bg {
+		background: url('../src/assets/images/star_creature_phone_bg/grovo.jpg') no-repeat 50% 50%;
+		background-size: cover;
+	}
+}
