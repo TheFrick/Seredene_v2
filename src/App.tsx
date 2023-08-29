@@ -410,7 +410,7 @@ function App() {
 								<span className='block text-white font-primary_Variable font-normal text-[0.86163rem] md:text-3xl'>STAR CREATURES THAT</span> LEAVE YOU SPELL BOUND
 							</h4>
 							<p className='text-white text-[0.625rem] md:text-xl font-primary_Variable font-normal mt-[2rem] inline-block xl:leading-7'>
-								Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+							Star creatures live on Planet Zurburry. They form connections with the Seredians and become their pets. Seredene stands at the brink of war. Let us find out how this tale unravels.
 							</p>
 						</div>
 
