@@ -223,8 +223,7 @@ function App() {
 		const element: any = ref.current;
 		// Section One Animations
 		gsap.to("#section_one .first-content", {
-			xPercent: -75,
-			opacity: 0,
+			yPercent: -75,
 			ease: "none",
 			scrollTrigger: {
 				trigger: element.querySelector("#section_one"),
@@ -234,8 +233,7 @@ function App() {
 			},
 		});
 		gsap.to("#section_one .first-image", {
-			xPercent: 75,
-			opacity: 0,
+			yPercent: -75,
 			ease: "none",
 			scrollTrigger: {
 				trigger: element.querySelector("#section_one"),
@@ -246,7 +244,7 @@ function App() {
 		});
 		// section_three
 		gsap.to("#section_three .part-one", {
-			yPercent: 70,
+			yPercent: -70,
 			ease: "none",
 			scrollTrigger: {
 				trigger: element.querySelector("#section_three .part-one"),
@@ -267,8 +265,7 @@ function App() {
 		});
 		// section_three
 		gsap.to("#section_three .creatures-list .content", {
-			xPercent: -75,
-			opacity: 0,
+			yPercent: -75,
 			ease: "none",
 			scrollTrigger: {
 				trigger: element.querySelector(".creatures-list"),
@@ -278,8 +275,7 @@ function App() {
 			},
 		});
 		gsap.to("#section_three .creatures-list .image-side", {
-			xPercent: 75,
-			opacity: 0,
+			yPercent: -50,
 			ease: "none",
 			scrollTrigger: {
 				trigger: element.querySelector(".creatures-list"),
@@ -290,19 +286,27 @@ function App() {
 		});
 		// section_five
 		gsap.to("#section_five .part-one", {
-			xPercent: -75,
-			opacity: 0,
+			yPercent: -75,
 			ease: "none",
 			scrollTrigger: {
 				trigger: element.querySelector("#section_five"),
-				start: "top top", // the default values
+				start: "top center", // the default values
 				// end: "bottom top",
 				scrub: true,
 			},
 		});
 		gsap.to("#section_five .part-two", {
-			xPercent: 75,
-			opacity: 0,
+			yPercent: -35,
+			ease: "none",
+			scrollTrigger: {
+				trigger: element.querySelector("#section_five .part-two"),
+				start: "top center", // the default values
+				// end: "bottom top",
+				scrub: true,
+			},
+		});
+		gsap.to("#section_five .part-three", {
+			yPercent: -75,
 			ease: "none",
 			scrollTrigger: {
 				trigger: element.querySelector("#section_five .part-two"),
@@ -311,36 +315,23 @@ function App() {
 				scrub: true,
 			},
 		});
-		gsap.to("#section_five .part-three", {
-			xPercent: -75,
-			opacity: 0,
+		// section_six
+		gsap.to("#section_six .part-one", {
+			yPercent: -40,
 			ease: "none",
 			scrollTrigger: {
-				trigger: element.querySelector("#section_five .part-three"),
+				trigger: element.querySelector("#section_six .part-one"),
 				start: "top center", // the default values
 				// end: "bottom top",
 				scrub: true,
 			},
 		});
-		// section_six
-		gsap.to("#section_six .part-one", {
-			xPercent: -75,
-			opacity: 0,
-			ease: "none",
-			scrollTrigger: {
-				trigger: element.querySelector("#section_six .part-one"),
-				start: "center center", // the default values
-				// end: "bottom top",
-				scrub: true,
-			},
-		});
 		gsap.to("#section_six .part-two", {
-			xPercent: 75,
-			opacity: 0,
+			yPercent: -30,
 			ease: "none",
 			scrollTrigger: {
 				trigger: element.querySelector("#section_six .part-one"),
-				start: "center center", // the default values
+				start: "top center", // the default values
 				// end: "bottom top",
 				scrub: true,
 			},
@@ -527,8 +518,8 @@ function App() {
 					</div>
 					<div className='xl:w-[50%] pr-[5%] part-two text-center md:text-left'>
 						<img src={authorImg} alt="authorImg" className='mx-auto xl:m-0 w-40 xl:w-auto' />
-						<h5 className='font-aftaSerifThin_regular font-normal text-[1.25rem] md:text-3xl text-white mt-10 mb-5'>Arpita Shah</h5>
-						<p className='font-primary_Variable font-normal text-[0.5rem] md:text-xl text-white'>The Author Arpita Shah first realised her calling towards the literary arts at the nascent age of 10, when she got enthralled by varied works of Art and Literature. Her first tryst with writing began as she started penning her thoughts, poems, quotes, etc. She is a Fine Arts graduate and a qualified advocate. SEREDENE is her first published novel.</p>
+						<h5 className='font-aftaSerifThin_regular font-normal text-[2rem] md:text-3xl text-white mt-10 mb-5'>Arpita Shah</h5>
+						<p className='font-primary_Variable font-normal text-[1rem] md:text-xl text-white'>The Author Arpita Shah first realised her calling towards the literary arts at the nascent age of 10, when she got enthralled by varied works of Art and Literature. Her first tryst with writing began as she started penning her thoughts, poems, quotes, etc. She is a Fine Arts graduate and a qualified advocate. SEREDENE is her first published novel.</p>
 					</div>
 				</div>
 			</section>
