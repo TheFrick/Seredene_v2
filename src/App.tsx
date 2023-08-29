@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState, Fragment } from 'react';
+import { Dialog, Transition } from '@headlessui/react'
 import './App.css';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,6 +17,7 @@ import userIcon from './assets/images/user_icon.svg'
 import emailIcon from './assets/images/email_icon.svg'
 import phoneIcon from './assets/images/phone_icon.svg'
 import arrowDownCircle from './assets/images/arrow-down-circle.svg'
+import creatureMap from './assets/images/creature-map.png'
 
 import creatureBugsty from './assets/images/creatures/DD_Bugsty_v01.png'
 import creatureGlitz from './assets/images/creatures/DD_Glitz_v01.png'
@@ -40,6 +42,8 @@ import creatureGrovo from './assets/images/creatures/DD_Grovo_v01.png'
 function App() {
 	gsap.registerPlugin(ScrollTrigger);
 	const ref = useRef(null);
+	const [open, setOpen] = useState(false);
+	const cancelButtonRef = useRef(null)
 
 	const creatureSlidersettings = {
 		dots: false,
@@ -207,159 +211,161 @@ function App() {
 		});
 	}
 
+	const openModal:any = () =>{
+		setOpen(true);
+	}
+
 	useEffect(() => {
 		tweenAnimation();
 	}, []);
 
 	const tweenAnimation: any = () => {
-			const element: any = ref.current;
-			// Section One Animations
-			gsap.to("#section_one .first-content", {
-				xPercent: -75,
-				opacity: 0,
-				ease: "none",
-				scrollTrigger: {
-					trigger: element.querySelector("#section_one"),
-					start: "center center", // the default values
-					// end: "bottom top",
-					scrub: true,
-				},
-			});
-			gsap.to("#section_one .first-image", {
-				xPercent: 75,
-				opacity: 0,
-				ease: "none",
-				scrollTrigger: {
-					trigger: element.querySelector("#section_one"),
-					start: "center center", // the default values
-					// end: "bottom top",
-					scrub: true,
-				},
-			});
-			// section_three
-			gsap.to("#section_three .part-one", {
-				xPercent: 50,
-				opacity: 0,
-				ease: "none",
-				scrollTrigger: {
-					trigger: element.querySelector("#section_three .part-one"),
-					start: "center center", // the default values
-					// end: "bottom top",
-					scrub: true,
-				},
-			});
-			gsap.to("#section_three .part-two", {
-				xPercent: -75,
-				opacity: 0,
-				ease: "none",
-				scrollTrigger: {
-					trigger: element.querySelector("#section_three"),
-					start: "top top", // the default values
-					// end: "bottom top",
-					scrub: true,
-				},
-			});
-			// section_three
-			gsap.to("#section_three .creatures-list .content", {
-				xPercent: -75,
-				opacity: 0,
-				ease: "none",
-				scrollTrigger: {
-					trigger: element.querySelector(".creatures-list"),
-					start: "top top", // the default values
-					// end: "bottom top",
-					scrub: true,
-				},
-			});
-			gsap.to("#section_three .creatures-list .image-side", {
-				xPercent: 75,
-				opacity: 0,
-				ease: "none",
-				scrollTrigger: {
-					trigger: element.querySelector(".creatures-list"),
-					start: "top top", // the default values
-					// end: "bottom top",
-					scrub: true,
-				},
-			});
-			// section_five
-			gsap.to("#section_five .part-one", {
-				xPercent: -75,
-				opacity: 0,
-				ease: "none",
-				scrollTrigger: {
-					trigger: element.querySelector("#section_five"),
-					start: "top top", // the default values
-					// end: "bottom top",
-					scrub: true,
-				},
-			});
-			gsap.to("#section_five .part-two", {
-				xPercent: 75,
-				opacity: 0,
-				ease: "none",
-				scrollTrigger: {
-					trigger: element.querySelector("#section_five .part-two"),
-					start: "top top", // the default values
-					// end: "bottom top",
-					scrub: true,
-				},
-			});
-			gsap.to("#section_five .part-three", {
-				xPercent: -75,
-				opacity: 0,
-				ease: "none",
-				scrollTrigger: {
-					trigger: element.querySelector("#section_five .part-three"),
-					start: "top center", // the default values
-					// end: "bottom top",
-					scrub: true,
-				},
-			});
-			// section_six
-			gsap.to("#section_six .part-one", {
-				xPercent: -75,
-				opacity: 0,
-				ease: "none",
-				scrollTrigger: {
-					trigger: element.querySelector("#section_six .part-one"),
-					start: "center center", // the default values
-					// end: "bottom top",
-					scrub: true,
-				},
-			});
-			gsap.to("#section_six .part-two", {
-				xPercent: 75,
-				opacity: 0,
-				ease: "none",
-				scrollTrigger: {
-					trigger: element.querySelector("#section_six .part-one"),
-					start: "center center", // the default values
-					// end: "bottom top",
-					scrub: true,
-				},
-			});
-			// section_seven
-			gsap.to("#section_seven .part-one", {
-				yPercent: 50,
-				ease: "none",
-				scrollTrigger: {
-					trigger: element.querySelector("#section_seven"),
-					start: "top center", // the default values
-					// end: "bottom top",
-					scrub: true,
-				},
-			});
-			gsap.to("#section_seven .part-two", {
-				yPercent: 50,
-				ease: "none",
-				scrollTrigger: {
-					trigger: element.querySelector("#section_seven"),
-					start: "top center", // the default values
-					// end: "bottom top",
-					scrub: true,
-				},
-			});
+		const element: any = ref.current;
+		// Section One Animations
+		gsap.to("#section_one .first-content", {
+			xPercent: -75,
+			opacity: 0,
+			ease: "none",
+			scrollTrigger: {
+				trigger: element.querySelector("#section_one"),
+				start: "center center", // the default values
+				// end: "bottom top",
+				scrub: true,
+			},
+		});
+		gsap.to("#section_one .first-image", {
+			xPercent: 75,
+			opacity: 0,
+			ease: "none",
+			scrollTrigger: {
+				trigger: element.querySelector("#section_one"),
+				start: "center center", // the default values
+				// end: "bottom top",
+				scrub: true,
+			},
+		});
+		// section_three
+		gsap.to("#section_three .part-one", {
+			yPercent: 70,
+			ease: "none",
+			scrollTrigger: {
+				trigger: element.querySelector("#section_three .part-one"),
+				start: "center center", // the default values
+				// end: "bottom top",
+				scrub: true,
+			},
+		});
+		gsap.to("#section_three .part-two", {
+			yPercent: -75,
+			ease: "none",
+			scrollTrigger: {
+				trigger: element.querySelector("#section_three .part-two"),
+				start: "top center", // the default values
+				// end: "bottom top",
+				scrub: true,
+			},
+		});
+		// section_three
+		gsap.to("#section_three .creatures-list .content", {
+			xPercent: -75,
+			opacity: 0,
+			ease: "none",
+			scrollTrigger: {
+				trigger: element.querySelector(".creatures-list"),
+				start: "top top", // the default values
+				// end: "bottom top",
+				scrub: true,
+			},
+		});
+		gsap.to("#section_three .creatures-list .image-side", {
+			xPercent: 75,
+			opacity: 0,
+			ease: "none",
+			scrollTrigger: {
+				trigger: element.querySelector(".creatures-list"),
+				start: "top top", // the default values
+				// end: "bottom top",
+				scrub: true,
+			},
+		});
+		// section_five
+		gsap.to("#section_five .part-one", {
+			xPercent: -75,
+			opacity: 0,
+			ease: "none",
+			scrollTrigger: {
+				trigger: element.querySelector("#section_five"),
+				start: "top top", // the default values
+				// end: "bottom top",
+				scrub: true,
+			},
+		});
+		gsap.to("#section_five .part-two", {
+			xPercent: 75,
+			opacity: 0,
+			ease: "none",
+			scrollTrigger: {
+				trigger: element.querySelector("#section_five .part-two"),
+				start: "top top", // the default values
+				// end: "bottom top",
+				scrub: true,
+			},
+		});
+		gsap.to("#section_five .part-three", {
+			xPercent: -75,
+			opacity: 0,
+			ease: "none",
+			scrollTrigger: {
+				trigger: element.querySelector("#section_five .part-three"),
+				start: "top center", // the default values
+				// end: "bottom top",
+				scrub: true,
+			},
+		});
+		// section_six
+		gsap.to("#section_six .part-one", {
+			xPercent: -75,
+			opacity: 0,
+			ease: "none",
+			scrollTrigger: {
+				trigger: element.querySelector("#section_six .part-one"),
+				start: "center center", // the default values
+				// end: "bottom top",
+				scrub: true,
+			},
+		});
+		gsap.to("#section_six .part-two", {
+			xPercent: 75,
+			opacity: 0,
+			ease: "none",
+			scrollTrigger: {
+				trigger: element.querySelector("#section_six .part-one"),
+				start: "center center", // the default values
+				// end: "bottom top",
+				scrub: true,
+			},
+		});
+		// section_seven
+		gsap.to("#section_seven .part-one", {
+			yPercent: 50,
+			ease: "none",
+			scrollTrigger: {
+				trigger: element.querySelector("#section_seven"),
+				start: "top center", // the default values
+				// end: "bottom top",
+				scrub: true,
+			},
+		});
+		gsap.to("#section_seven .part-two", {
+			yPercent: 50,
+			ease: "none",
+			scrollTrigger: {
+				trigger: element.querySelector("#section_seven"),
+				start: "top center", // the default values
+				// end: "bottom top",
+				scrub: true,
+			},
+		});
 
 	}
 
@@ -385,7 +391,7 @@ function App() {
 								<img src={arrowDownCircle} alt={arrowDownCircle} className='mr-2' /> SHOP NOW</a>
 						</div>
 						<div className='mt-10 md:mt-0 first-image'>
-							<img src={topCreatureImage} alt="topCreatureImage" className='md:w-[80%] xl:w-auto mx-auto'/>
+							<img src={topCreatureImage} alt="topCreatureImage" className='md:w-[80%] xl:w-auto mx-auto' />
 						</div>
 					</div>
 				</div>
@@ -399,7 +405,7 @@ function App() {
 						<p className='font-primary_Variable font-bold text-white text-[0.5rem] md:text-xl'>Looking to escape from reality? This fantasy fiction is just what you’ve been seeking. Filled with adventure, love, friendship, magic and destiny, this young adult fiction is more than your average magical stories. It's all about immersive new age fantasy. Nothing short of a netflix original.</p>
 					</div>
 					<div className='text-center mb-10 xl:mb-0 part-two'>
-						<button className='rounded-[2.3125rem] px-8 xl:px-16 py-1 xl:py-3 bg-white text-[0.72rem] md:text-2xl font-primary_Variable font-bold text-blue-100'>
+						<button className='rounded-[2.3125rem] px-8 xl:px-16 py-1 xl:py-3 bg-white text-[0.72rem] md:text-2xl font-primary_Variable font-bold text-blue-100' onClick={ () =>openModal()}>
 							EXPLORE SEREDENE
 						</button>
 					</div>
@@ -410,7 +416,7 @@ function App() {
 								<span className='block text-white font-primary_Variable font-normal text-[0.86163rem] md:text-3xl'>STAR CREATURES THAT</span> LEAVE YOU SPELL BOUND
 							</h4>
 							<p className='text-white text-[0.625rem] md:text-xl font-primary_Variable font-normal mt-[2rem] inline-block xl:leading-7'>
-							Star creatures live on Planet Zurburry. They form connections with the Seredians and become their pets. Seredene stands at the brink of war. Let us find out how this tale unravels.
+								Star creatures live on Planet Zurburry. They form connections with the Seredians and become their pets. Seredene stands at the brink of war. Let us find out how this tale unravels.
 							</p>
 						</div>
 
@@ -516,11 +522,11 @@ function App() {
 			<section id="section_six">
 				<div className='flex flex-col xl:flex-row justify-between items-center xl:h-screen py-20 xl:py-0 px-10 xl:px-0'>
 					<div className='xl:w-[40%] xl:pr-[5%] mb-16 xl:mb-0 part-one'>
-						<img src={bookCoverImg} alt="bookCoverImg" className='hidden xl:block'/>
-						<img src={mobileBookCoverImg} alt="bookCoverImg" className='xl:hidden'/>
+						<img src={bookCoverImg} alt="bookCoverImg" className='hidden xl:block' />
+						<img src={mobileBookCoverImg} alt="bookCoverImg" className='xl:hidden' />
 					</div>
 					<div className='xl:w-[50%] pr-[5%] part-two text-center md:text-left'>
-						<img src={authorImg} alt="authorImg" className='mx-auto w-40 xl:w-auto'/>
+						<img src={authorImg} alt="authorImg" className='mx-auto xl:m-0 w-40 xl:w-auto' />
 						<h5 className='font-aftaSerifThin_regular font-normal text-[1.25rem] md:text-3xl text-white mt-10 mb-5'>Arpita Shah</h5>
 						<p className='font-primary_Variable font-normal text-[0.5rem] md:text-xl text-white'>The Author Arpita Shah first realised her calling towards the literary arts at the nascent age of 10, when she got enthralled by varied works of Art and Literature. Her first tryst with writing began as she started penning her thoughts, poems, quotes, etc. She is a Fine Arts graduate and a qualified advocate. SEREDENE is her first published novel.</p>
 					</div>
@@ -531,7 +537,7 @@ function App() {
 				<div className='wrapper'>
 					<div className='flex flex-col xl:flex-row justify-between items-center h-screen py-20 xl:py-0 px-10 xl:px-0'>
 						<div className='xl:w-1/2 xl:mr-10 part-one'>
-							<img src={creatureBriya} alt="creature"/>
+							<img src={creatureBriya} alt="creature" />
 						</div>
 						<div className='w-full xl:w-1/2 part-two'>
 							<h4 className='text-[1.281rem] md:text-3xl font-primary_Variable font-bold text-center mb-8'>LEAD FORM</h4>
@@ -594,6 +600,47 @@ function App() {
 					</div>
 				</div>
 			</section>
+
+
+			<Transition.Root show={open} as={Fragment}>
+				<Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
+					<Transition.Child
+						as={Fragment}
+						enter="ease-out duration-300"
+						enterFrom="opacity-0"
+						enterTo="opacity-100"
+						leave="ease-in duration-200"
+						leaveFrom="opacity-100"
+						leaveTo="opacity-0"
+					>
+						<div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+					</Transition.Child>
+
+					<div className="fixed inset-0 z-10 overflow-y-auto">
+						<div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+							<Transition.Child
+								as={Fragment}
+								enter="ease-out duration-300"
+								enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+								enterTo="opacity-100 translate-y-0 sm:scale-100"
+								leave="ease-in duration-200"
+								leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+								leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+							>
+								<Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-transparent text-left shadow-xl transition-all sm:my-8 sm:w-full">
+									<div className="bg-transparent px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+										<div className="sm:flex sm:items-start">
+											<div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+												<img src={creatureMap} alt='creatureMap'  className='mx-auto w-[90%]'/>
+											</div>
+										</div>
+									</div>
+								</Dialog.Panel>
+							</Transition.Child>
+						</div>
+					</div>
+				</Dialog>
+			</Transition.Root>
 		</div>
 	);
 }
