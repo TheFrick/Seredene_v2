@@ -1,10 +1,10 @@
 # Seredene website.
 
 Clone the repository =>
-### `git clone https://github.com/karan-ghadi/bizspoke_v2.git`
+### `git clone https://github.com/karan-ghadi/seredene_v2.git`
 
 Go to project directory =>
-### `cd bizspoke_v2`
+### `cd Seredene_v2`
 
 Install packages =>
 ### `npm i`
