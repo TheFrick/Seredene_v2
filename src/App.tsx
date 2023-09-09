@@ -465,7 +465,7 @@ function App() {
 							return (
 								<div className={`${item.creatureBgClass} px-10 xl:px-28`} key={item.title}>
 									<div>
-										<h4 className='font-aftaSerifThin_regular text-[2.2rem] md:text-3xl text-white text-center pt-10 md:pt-28 mb-10 md:mb-20 xl:mb-0'>STAR CREATURE</h4>
+										<h4 className='font-aftaSerifThin_regular text-[2rem] md:text-3xl text-white text-center pt-10 md:pt-28 mb-10 md:mb-20 xl:mb-0'>STAR CREATURE</h4>
 										<div className='flex flex-col xl:flex-row items-center justify-between h-[80vh]'>
 											<div className='text-center xl:w-[34rem] xl:mr-10'>
 												<div className="section_three_creature creature-image">
@@ -481,7 +481,7 @@ function App() {
 													{item.subTitle}
 												</h4>
 
-												<p className='text-white text-[1rem] md:text-xl font-primary_Variable font-normal mt-[1rem] inline-block xl:leading-7'>
+												<p className='text-white text-[0.8rem] md:text-xl font-primary_Variable font-normal mt-[1rem] inline-block xl:leading-7'>
 													{item.info}
 												</p>
 											</div>
@@ -537,7 +537,7 @@ function App() {
 			</section>
 
 			<section id="section_seven">
-				<div className='wrapper'>
+				<div className='wrapper pb-64 md:pb-0'>
 					<div className='flex flex-col xl:flex-row justify-between items-center h-screen py-20 xl:py-0 px-10 xl:px-0'>
 						<div className='xl:w-1/2 xl:mr-10 part-one'>
 							<img src={creatureBriya} alt="creature" />
