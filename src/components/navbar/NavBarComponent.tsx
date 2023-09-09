@@ -13,7 +13,7 @@ export const NavbarComponent = () => {
 	return (
 		<>
 			<header className="bg-transparent fixed top-0 left-0 z-30 w-full">
-				<nav className="mx-auto flex w-full items-center justify-between p-6 lg:px" aria-label="Global">
+				<nav className="mx-auto flex w-full items-center justify-between md:p-6 lg:px" aria-label="Global">
 					<div className="flex lg:flex-1">
 						<a href="/" className="-m-1.5 p-1.5">
 							<span className="sr-only">Bizspoke</span>

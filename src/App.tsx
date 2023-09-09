@@ -112,77 +112,88 @@ function App() {
 			title: 'Twinx',
 			subTitle: 'Element of wit Star creature',
 			info: 'Twinx is witty, jovial, sharp, creative, popular and easy going. He can remain calm and think out of the box even in challenging situations. He is reliable, spirited and spreads cheer.',
-			creatureBgClass: 'creature-one-bg'
+			creatureBgClass: 'creature-one-bg',
+			customClass:'w-1/2'
 		},
 		{
 			imgSrc: creatureGemsty,
 			title: 'Gemsty',
 			subTitle: 'Gemstone Star creature',
 			info: 'Gemsty has his head up in the clouds. He knows that he is priceless and is very proud. He behaves like royalty. He is calculative and selective to the extreme.',
-			creatureBgClass: 'creature-two-bg'
+			creatureBgClass: 'creature-two-bg',
+			customClass:''
 		},
 		{
 			imgSrc: creatureBugsty,
 			title: 'Bugsty',
 			subTitle: 'Poison and Battle Star creature',
 			info: 'Bugsty is cute in appearance and lovable but lethal. She wins admiration and is strategic as well as efficient. Deception is her Art.',
-			creatureBgClass: 'creature-three-bg'
+			creatureBgClass: 'creature-three-bg',
+			customClass:''
 		},
 		{
 			imgSrc: creatureTodo,
 			title: 'Todo',
 			subTitle: 'Mind Star creature',
 			info: `Todo can see through pretences. He knows when what people say doesn't match with what they mean. He is an  extremely strong mind reader and a very loyal pet. He is cautious and full of wisdom.`,
-			creatureBgClass: 'creature-four-bg'
+			creatureBgClass: 'creature-four-bg',
+			customClass:''
 		},
 		{
 			imgSrc: creatureHoggit,
 			title: 'Hoggit',
 			subTitle: 'Emotion of Hunger Star creature',
 			info: `Hoggit is extremely adorable and wins everybody's heart. They love him enough to feed him treats just by looking into those twinkly puppy dog eyes.`,
-			creatureBgClass: 'creature-five-bg'
+			creatureBgClass: 'creature-five-bg',
+			customClass:''
 		},
 		{
 			imgSrc: creatureBlinga,
 			title: 'Blinga',
 			subTitle: 'Electric Star creature',
 			info: `Blinga is very cool headed even in danger and can efficiently fight out difficult situations. Blinga controls electricity.`,
-			creatureBgClass: 'creature-six-bg'
+			creatureBgClass: 'creature-six-bg',
+			customClass:''
 		},
 		{
 			imgSrc: creatureHuztoc,
 			title: 'Huztoc',
 			subTitle: 'Ancient Fire Star creature',
 			info: `Huztoc is one among the bravest and strongest Star creatures. He is witty, thrill seeking, fun loving and won't back down from a good fight.`,
-			creatureBgClass: 'creature-seven-bg'
+			creatureBgClass: 'creature-seven-bg',
+			customClass:''
 		},
 		{
 			imgSrc: creatureFairylex,
 			title: 'Fairylex',
 			subTitle: 'Ancient Mystic Light magic Star creature',
 			info: `Fairylex is calm, brainy, patient, loving, loyal and strong. She has a pure heart and doesn't give up easily.`,
-			creatureBgClass: 'creature-eight-bg'
+			creatureBgClass: 'creature-eight-bg',
+			customClass:''
 		},
 		{
 			imgSrc: creatureSpirwindy,
 			title: 'Spirwindy',
 			subTitle: 'Ancient Wind and Weather Star creature',
 			info: `Spirwindy is fun loving, powerful, mischievous, loving and a great friend.`,
-			creatureBgClass: 'creature-nine-bg'
+			creatureBgClass: 'creature-nine-bg',
+			customClass:''
 		},
 		{
 			imgSrc: creatureGrazil,
 			title: 'Grazil',
 			subTitle: 'Ancient Plant Star creature',
 			info: `He is extremely intelligent and loyal. He makes for an ideal companion. He is patient and strong beyond measure.`,
-			creatureBgClass: 'creature-ten-bg'
+			creatureBgClass: 'creature-ten-bg',
+			customClass:''
 		},
 		{
 			imgSrc: creatureGrovo,
-			title: 'Gravo',
+			title: 'Grovo',
 			subTitle: 'Ancient Dark magic Star creature',
 			info: `Grovo is extremely powerful, intelligent and really quite devious. He makes a really formidable foe and a loving friend.`,
-			creatureBgClass: 'creature-eleven-bg'
+			creatureBgClass: 'creature-eleven-bg',
+			customClass:''
 		},
 
 	];
@@ -454,12 +465,13 @@ function App() {
 							return (
 								<div className={`${item.creatureBgClass} px-10 xl:px-28`} key={item.title}>
 									<div>
-										<h4 className='font-aftaSerifThin_regular text-[2.2rem] md:text-3xl text-white text-center pt-28 mb-20 xl:mb-0'>STAR CREATURE</h4>
+										<h4 className='font-aftaSerifThin_regular text-[2.2rem] md:text-3xl text-white text-center pt-10 md:pt-28 mb-10 md:mb-20 xl:mb-0'>STAR CREATURE</h4>
 										<div className='flex flex-col xl:flex-row items-center justify-between h-[80vh]'>
 											<div className='text-center xl:w-[34rem] xl:mr-10'>
 												<div className="section_three_creature creature-image">
 													<div className='relative'>
-														<img src={item.imgSrc} alt={item.title} className='relative z-10 w-3/4 md:w-[60%] xl:w-[85%] mx-auto' />
+														<img src={item.imgSrc} alt={item.title}
+														className='relative z-10 w-[150px] md:w-[60%] xl:w-[85%] mx-auto' />
 													</div>
 												</div>
 											</div>
